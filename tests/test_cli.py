@@ -752,7 +752,7 @@ class TestShowServersCli(object):
         assert "" == err
 
         # AND the command output includes the description and server name
-        assert "%s%s:" % (self.test_server_name, expected_description)
+        assert "%s%s:" % (self.test_server_name, expected_description) in out
 
     @pytest.mark.parametrize(
         ("active", "disabled", "expected_description"),
