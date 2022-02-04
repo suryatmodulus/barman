@@ -57,7 +57,9 @@ class GoogleCloudInterface(CloudInterface):
     # MAX_ARCHIVE_SIZE - so we set a maximum of 1TB per file
     MAX_ARCHIVE_SIZE = 1 << 40
 
-    def __init__(self, url, jobs=1, encryption_scope=None, profile_name=None, tags=None):
+    def __init__(
+        self, url, jobs=1, encryption_scope=None, profile_name=None, tags=None
+    ):
         """
         Create a new Google cloud Storage interface given the supplied account url
 
