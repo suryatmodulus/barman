@@ -3594,7 +3594,11 @@ class Server(RemoteStatusMixin):
                         "basebackup",
                         ":%s/%s/" % (remote_backup_dir, backup_name),
                         local_backup_info.get_basebackup_directory(),
-                        exclude_and_protect=["/backup.info", "/.backup.lock"],
+                        exclude_and_protect=[
+                            "/backup.info",
+                            "/.backup.lock",
+                            "/data/pg_tblspc/*",
+                        ],
                         bwlimit=self.config.bandwidth_limit,
                         reuse=reuse_dir,
                         item_class=RsyncCopyController.PGDATA_CLASS,
